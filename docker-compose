@@ -67,3 +67,9 @@ networks:
   default:
     external: true
     name: honeypot_network
+
+
+
+
+
+docker network create --driver bridge --subnet 192.168.250.0/24 honeypot_network
