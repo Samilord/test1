@@ -74,3 +74,5 @@ networks:
 
 docker network create --driver bridge --subnet 192.168.250.0/24 honeypot_network
 docker network ls -q | grep -vE "$(docker network ls --filter name=bridge --filter name=host --filter name=none -q | paste -sd "|" -)" | xargs -r docker network rm
+docker stop $(docker ps -q)
+docker rm $(docker ps -a -q)
